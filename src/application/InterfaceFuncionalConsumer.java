@@ -18,7 +18,9 @@ public class InterfaceFuncionalConsumer {
 		list.add(new Product("Tablet", 350.0));
 		list.add(new Product("HD cas",  80.90));
 		
-		list.forEach(Product::staticPriceUpdate);
+		/*list.forEach(Product::staticPriceUpdate); */	
+		
+		list.forEach(Product::nonStaticPriceUpdate);
 		
 		/*list.forEach(new PriceUpdateConsumer());
 		// esse forEach é um defaultMethod que receebe um Consumer como argumento */
