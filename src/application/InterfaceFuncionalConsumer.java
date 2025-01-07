@@ -3,6 +3,7 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Consumer;
 
 import entities.Product;
 
@@ -20,7 +21,14 @@ public class InterfaceFuncionalConsumer {
 		
 		/*list.forEach(Product::staticPriceUpdate); */	
 		
-		list.forEach(Product::nonStaticPriceUpdate);
+		double factor = 1.1;
+		
+		Consumer<Product> cons = p -> p.setPrice(p.getPrice() * factor);
+		// Assim fica bom porque vocÊ consegue passa uma variavel como argumento
+		
+		list.forEach(cons);
+		
+		/* list.forEach(Product::nonStaticPriceUpdate); */
 		
 		/*list.forEach(new PriceUpdateConsumer());
 		// esse forEach é um defaultMethod que receebe um Consumer como argumento */
